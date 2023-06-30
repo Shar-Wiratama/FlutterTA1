@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_application_1/components/my_button.dart';
 import 'package:flutter_application_1/components/my_textfield.dart';
 
+import 'forgot_pw_page.dart';
+
 class StartPage extends StatefulWidget {
   const StartPage({super.key});
 
@@ -81,9 +83,25 @@ class _StartPageState extends State<StartPage> {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
-                    Text(
-                      'Forgot Password?',
-                      style: TextStyle(color: Colors.grey[600]),
+                    GestureDetector(
+                      onTap: (){
+                          Navigator.push(
+                            context, 
+                            MaterialPageRoute(builder: 
+                          (context){
+                            return ForgotPasswordPage();
+                            },
+                          ),
+                        );
+                      },
+                      child:
+                      Text(
+                        'Forgot Password',
+                        style: TextStyle(
+                        color: Colors.blue[600],
+                        fontWeight: FontWeight.bold,
+                        ),
+                        ),
                     ),
                   ],
                 ),
